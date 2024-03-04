@@ -36,7 +36,13 @@
         nav ul li a:hover {
             color: #ffc107;
         }
-        
+        #location{
+		text-align: left;
+	}
+	#hours {
+		text-align: right;
+		float: right;
+	}
         section {
             max-width: 1000px;
  	 position: relative;
@@ -51,6 +57,7 @@
             bottom: 0;
             width: 100%;
         }
+	
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -231,6 +238,8 @@ img {vertical-align: middle;}
         <section id="about">
             <h2>About</h2>
             <p>
+		    <a id = "location"> Location</a>
+		    <a id = "hours"> Hours </a>
 </p>
 <pre>
 
@@ -296,7 +305,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-
+</br>
 
 
 	<footer>
