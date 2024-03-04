@@ -36,13 +36,20 @@
         nav ul li a:hover {
             color: #ffc107;
         }
-        #location{
-		text-align: left;
-	}
-	#hours {
-		text-align: right;
-		float: right;
-	}
+        
+        .column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
         section {
             max-width: 1000px;
  	 position: relative;
@@ -50,7 +57,7 @@
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background-color: #fff;
             color: #0B6623;
             position: relative;
@@ -77,19 +84,7 @@
                 flex: 0 0 100%;
             }
         }
-        .resume-download-btn {
-            display: inline-block;
-            background-color: #D9DDDC;
-            color: #0B6623;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .resume-download-btn:hover {
-            background-color: #BEBD88;
-        }
+        
 	    input[type=text], select, textarea {
 	  width: 100%;
 	  padding: 12px;
@@ -237,11 +232,22 @@ img {vertical-align: middle;}
     <div class="container">
         <section id="about">
             <h2>About</h2>
-            <p>
-		    <a id = "location"> Location</a>
-		    <a id = "hours"> Hours </a>
+            <p> Write something here... </p>
+            
+
+<div class = "row">
+<div class ="column">
+		<div><h5> Location </h5></div>
+         <div>Monday - Thursday: 10 a.m. - 7 p.m.</div><div> Friday: 10 a.m - 6 p.m. </div><div>Saturday: 10 a.m. - 6 p.m.</div><div>Sunday: Closed</div>
+        
+        </div>
+        <div class ="column">
+        <div><h5> Hours </h5></div>
+         <div><div>1600 Pennsylvania Ave,</div><div>Eugene, OR</div></a></div>
+        
+        </div>
+        <div>
 </p>
-<pre>
 
 </pre>
 	</section>
@@ -305,7 +311,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
-</br>
+
 
 
 	<footer>
