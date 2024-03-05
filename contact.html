@@ -7,19 +7,15 @@
     <style>
         /* CSS for basic styling */
         body {
-            font-family: New Times Roman;
+            font-family: Georgia;
             margin: 0;
             padding: 0;
-            
-	    background-image: url('headerbackgroundphoto.jpg');
-	    background-repeat: no-repeat;
-  	    background-attachment: fixed;
-  	    background-size: cover;
+            background-color: transparent;
+            color: #D47C4E;
         }
         header {
             background-color: #fff;
-            color: #0B6623;
-            padding: 20px;
+            color: #D47C4E;
             text-align: Center;
         }
         nav ul {
@@ -32,29 +28,42 @@
             margin: 0 10px;
         }
         nav ul li a {
-            color: #0B6623;
+            color: #D47C4E;
             text-decoration: none;
            transition: all 0.3s ease;
         }
         nav ul li a:hover {
-            color: #ffc107;
+            color: #432616;
         }
         
+        .column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
         section {
-            padding: 40px 20px;
+        padding: 40px 20px;
             margin: 20px;
             border-radius: 5px;
-	    color: #fff;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 10px;
             background-color: #fff;
-            color: #0B6623;
+            color: #D47C4E;
             position: relative;
             bottom: 0;
             width: 100%;
         }
+	
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -74,19 +83,9 @@
                 flex: 0 0 100%;
             }
         }
-        .resume-download-btn {
-            display: inline-block;
-            background-color: #D9DDDC;
-            color: #0B6623;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .resume-download-btn:hover {
-            background-color: #BEBD88;
-        }
+        
+
+	
 	    input[type=text], select, textarea {
 	  width: 100%;
 	  padding: 12px;
@@ -99,7 +98,7 @@
 	}
 	
 	input[type=submit] {
-	  background-color: #BEBD88;
+	  background-color: #D47C4E;
 	  color: white;
 	  padding: 12px 20px;
 	  border: none;
@@ -115,15 +114,15 @@
 	  border-radius: 5px;
 	  background-color: transparent;
 	  padding: 20px;
-	  color: #fff
+	  color: #D47C4E
 	}
 	.linked {
-  	  color: #0B6623;
+  	  color: #D47C4E;
  	  background-color: transparent;
  	  text-decoration: underline;
 	}
     .linked:hover {
-  background-color: #BEBD88;
+  background-color: #432616;
   * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
@@ -147,6 +146,7 @@ img {vertical-align: middle;}
                 <li class="active"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+        <hr style="height:2px;border-width:0;color:#432616;background-color:#432616">
     </header>
 
         <section id="contact">
@@ -172,10 +172,7 @@ img {vertical-align: middle;}
         </section>
     </div>
 	<footer>
+    <hr style="height:2px;border-width:0;color:#432616;background-color:#432616">
     <h3> Bates Cat Rescue </h3>
     <p>  </p>
     <p> Eugene, OR </p>
-    </footer>
-    
-</body>
-</html>
