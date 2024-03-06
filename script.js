@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let cats = JSON.parse(localStorage.getItem('cats')) || [];
     cats.push(cat);
     localStorage.setItem('cats', JSON.stringify(cats));
-    loadAvailableCats();
   }
 
   // Event listener for form submission
