@@ -1,4 +1,33 @@
 <style>
+       body {
+            font-family: Georgia;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            color: #D47C4E;
+        }
+        header {
+            background-color: #fff;
+            color: #D47C4E;
+            text-align: Center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: Center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #D47C4E;
+            text-decoration: none;
+           transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #432616;
+        }
 .container {
   max-width: 600px;
   margin: 20px auto;
@@ -59,45 +88,35 @@ button:active {
 </style>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cat Adoption Form</title>
-</head>
 <body>
-  <div class="container">
-    <h1>Cat Adoption Form</h1>
-    <form id="catForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
-
-      <label for="breed">Breed:</label>
-      <input type="text" id="breed" name="breed" required>
-
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-
-      <label for="color">Color:</label>
-      <input type="text" id="color" name="color" required>
-
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" rows="4" required></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
+    <header>
+        <img src="logo.png"width="300" height="300">
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="available_cats.html">Available Cats</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+	    
+    </header>
+	<hr style="height:2px;border-width:0;color:#432616;background-color:#432616">
+  <h> Available Cats</h>
     <div id="catList">
       <!-- Cat information will be displayed here -->
     </div>
   </div>
 
   <script src="script.js"></script>
+<footer>
+<hr style="height:2px;border-width:0;color:#432616;background-color:#432616">
+    <h3> Bates Cat Rescue </h3>
+    <p>  </p>
+    <p> Eugene, OR </p>
+    </footer>
+    
 </body>
 </html>
