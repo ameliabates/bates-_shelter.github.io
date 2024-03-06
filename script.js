@@ -24,4 +24,27 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     catList.appendChild(catDiv);
   }
+
+  // Function to save cat information to localStorage
+  function saveCatToStorage(cat) {
+    let cats = JSON.parse(localStorage.getItem('cats')) || [];
+    cats.push(cat);
+    localStorage.setItem('cats', JSON.stringify(cats));
+  }
+
+  // Event listener for form submission
+  const form = document.getElementById('catForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const catInfo = {};
+    formData.forEach((value, key) => {
+      catInfo[key] = value;
+    });
+
+    displayCat(catInfo);
+    saveCatToStorage(catInfo);
+    form.reset();
+  });
 });
