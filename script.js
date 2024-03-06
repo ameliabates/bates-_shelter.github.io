@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('catForm');
   const catList = document.getElementById('catList');
 
+  // Load existing cats from localStorage when the page loads
+  loadCatsFromStorage();
+
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     displayCat(catInfo);
+    saveCatToStorage(catInfo);
     form.reset();
   });
 
@@ -27,5 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
       <p>Description: ${catInfo.description}</p>
     `;
     catList.appendChild(catDiv);
+  }
+
+  function saveCatToStorage(catInfo) {
+    let cats = JSON.parse(localStorage.getItem('cats')) || [];
+    cats.push(catInfo);
+    localStorage.setItem('cats', JSON.stringify(cats));
+  }
+
+  function loadCatsFromStorage() {
+    let cats = JSON.parse(localStorage.getItem('cats')) || [];
+    cats.forEach(catInfo => {
+      displayCat(catInfo);
+    });
   }
 });
