@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   loadAvailableCats();
 
   function loadAvailableCats() {
+    catList.innerHTML = ''; // Clear existing cat list
     const cats = JSON.parse(localStorage.getItem('cats')) || [];
     cats.forEach(cat => {
       displayCat(cat);
