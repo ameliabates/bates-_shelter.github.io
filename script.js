@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             saveCatToStorage(catInfo);
             form.reset();
-            window.location.href = 'cat_list.html'; // Redirect to the cat list page
+            window.location.href = 'upload_cat.html'; // Redirect to the cat list page
         });
     } else {
         console.error("Form with ID 'catForm' not found");
