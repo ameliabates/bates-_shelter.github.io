@@ -44,8 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
       catInfo[key] = value;
     });
 
-    displayCat(catInfo);
-    saveCatToStorage(catInfo);
+    saveCatToStorage(catInfo); // Save cat information to localStorage
+    loadAvailableCats(); // Reload available cats from localStorage
     form.reset();
   });
 });
+
