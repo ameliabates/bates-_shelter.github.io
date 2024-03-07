@@ -1,52 +1,62 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const catList = document.getElementById('catList');
+    const catList = document.getElementById('catList');
 
-  // Load available cats from localStorage
-  loadAvailableCats();
+    // Load available cats from localStorage
+    loadAvailableCats();
 
-  function loadAvailableCats() {
-    catList.innerHTML = ''; // Clear existing cat list
-    const cats = JSON.parse(localStorage.getItem('cats')) || [];
-    cats.forEach(cat => {
-      displayCat(cat);
-    });
-  }
+    function loadAvailableCats() {
+        const catList = document.getElementById('catList');
+        if (!catList) {
+            console.error("Element with ID 'catList' not found");
+            return;
+        }
 
-  function displayCat(cat) {
-    const catDiv = document.createElement('div');
-    catDiv.classList.add('cat');
-    catDiv.innerHTML = `
-      <h2>${cat.name}</h2>
-      <p>Age: ${cat.age}</p>
-      <p>Breed: ${cat.breed}</p>
-      <p>Gender: ${cat.gender}</p>
-      <p>Color: ${cat.color}</p>
-      <p>Description: ${cat.description}</p>
-    `;
-    catList.appendChild(catDiv);
-  }
+        catList.innerHTML = ''; // Clear existing cat list
+        const cats = JSON.parse(localStorage.getItem('cats')) || [];
+        cats.forEach(cat => {
+            displayCat(cat);
+        });
+    }
 
-  // Function to save cat information to localStorage
-  function saveCatToStorage(cat) {
-    let cats = JSON.parse(localStorage.getItem('cats')) || [];
-    cats.push(cat);
-    localStorage.setItem('cats', JSON.stringify(cats));
-  }
+    function displayCat(cat) {
+        const catDiv = document.createElement('div');
+        catDiv.classList.add('cat');
+        catDiv.innerHTML = `
+            <h2>${cat.name}</h2>
+            <p>Age: ${cat.age}</p>
+            <p>Breed: ${cat.breed}</p>
+            <p>Gender: ${cat.gender}</p>
+            <p>Color: ${cat.color}</p>
+            <p>Description: ${cat.description}</p>
+        `;
+        catList.appendChild(catDiv);
+    }
 
-  // Event listener for form submission
-  const form = document.getElementById('catForm');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+    // Function to save cat information to localStorage
+    function saveCatToStorage(cat) {
+        let cats = JSON.parse(localStorage.getItem('cats')) || [];
+        cats.push(cat);
+        localStorage.setItem('cats', JSON.stringify(cats));
+        loadAvailableCats();
+    }
 
-    const formData = new FormData(form);
-    const catInfo = {};
-    formData.forEach((value, key) => {
-      catInfo[key] = value;
-    });
+    // Event listener for form submission
+    const form = document.getElementById('catForm');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    saveCatToStorage(catInfo); // Save cat information to localStorage
-    loadAvailableCats(); // Reload available cats from localStorage
-    form.reset();
-  });
+            const formData = new FormData(form);
+            const catInfo = {};
+            formData.forEach((value, key) => {
+                catInfo[key] = value;
+            });
+
+            displayCat(catInfo);
+            saveCatToStorage(catInfo);
+            form.reset();
+        });
+    } else {
+        console.error("Form with ID 'catForm' not found");
+    }
 });
-
